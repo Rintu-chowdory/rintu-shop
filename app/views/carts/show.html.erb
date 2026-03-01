@@ -1,0 +1,36 @@
+<h2>🛒 Your Cart</h2>
+
+<% if @cart_items.empty? %>
+  <div class="alert alert-info">Your cart is empty! <%= link_to "Continue Shopping", root_path %></div>
+<% else %>
+  <table class="table table-bordered">
+    <thead class="table-dark">
+      <tr>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Total</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @cart_items.each do |item| %>
+        <tr>
+          <td><%= item.product.name %></td>
+          <td>€<%= item.product.price %></td>
+          <td><%= item.quantity %></td>
+          <td>€<%= item.product.price * item.quantity %></td>
+          <td>
+            <%= button_to "Remove", cart_item_path(item), method: :delete, class: "btn btn-danger btn-sm" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <h4 class="text-end text-success">
+    Total: €<%= @cart_items.sum { |item| item.product.price * item.quantity } %>
+  </h4>
+
+  <%= link_to "Continue Shopping", root_path, class: "btn btn-primary" %>
+<% end %>
