@@ -1,13 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  description: MyText
+  name: Coffee Mug
+  description: A sturdy mug for hot drinks
   price: 9.99
-  image_url: MyString
+  image_url: https://example.com/mug.jpg
 
 two:
-  name: MyString
-  description: MyText
-  price: 9.99
-  image_url: MyString
+  name: Notebook
+  description: A dotted notebook for notes
+  price: 4.99
+  image_url: https://example.com/notebook.jpg

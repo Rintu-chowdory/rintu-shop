@@ -17,6 +17,10 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+# Pin json to 2.x: ActiveSupport 8.1 is not yet compatible with the json 3.0 API
+# (JSON.parse arity change breaks ActiveSupport::JSON.decode / message encryptor)
+gem "json", "< 3"
+
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
 
